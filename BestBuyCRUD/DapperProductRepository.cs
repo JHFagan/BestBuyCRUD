@@ -34,6 +34,11 @@ namespace BestBuyCRUD
 
         public void DeleteProduct (int prodID)
         {
+           
+            _connection.Execute("DELETE FROM Sales WHERE ProductID = @pID;",
+                new { pID = prodID });
+            _connection.Execute("DELETE FROM Reviews WHERE ProductID = @pID;",
+               new { pID = prodID });
             _connection.Execute("DELETE FROM Products WHERE ProductID = @pID;",
                 new { pID = prodID });
         }

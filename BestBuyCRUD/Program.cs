@@ -32,7 +32,7 @@ namespace BestBuyCRUD
             //repoProd.UpdateProduct(944, 2, "Knick-Knacks");
             //repoProd.UpdateProduct(945, 100, "Fingernails");
             //repoProd.UpdateProduct(946, 1, "Creepy Dolls");
-            repoProd.DeleteProduct(946);
+            repoProd.DeleteProduct(945);
 
             var products = repoProd.GetAllProducts(conn);
             foreach(var prod in products)
