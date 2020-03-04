@@ -16,22 +16,13 @@ namespace BestBuyCRUD
             conn.ConnectionString = System.IO.File.ReadAllText("ConnectionString.txt");
             var repo = new DapperDepartmentRepository(conn);
 
-           // repo.InsertDepartment("Fun New Department");
+           
 
             var departments = repo.GetAllDepartments();
 
-           /* foreach (var dep in departments)
-            {
-                Console.WriteLine($"{dep.DepartmentID} : {dep.Name}.");
-            }
-            */
+           
             var repoProd = new DapperProductRepository(conn);
-            //repoProd.CreateProduct("ISZ Album", 6, 7);
-            //repoProd.UpdateProduct(942, 60, "Stuff");
-            //repoProd.UpdateProduct(943, 11, "Blah");
-            //repoProd.UpdateProduct(944, 2, "Knick-Knacks");
-            //repoProd.UpdateProduct(945, 100, "Fingernails");
-            //repoProd.UpdateProduct(946, 1, "Creepy Dolls");
+          
             repoProd.DeleteProduct(945);
 
             var products = repoProd.GetAllProducts(conn);
@@ -39,7 +30,6 @@ namespace BestBuyCRUD
             {
                 Console.WriteLine($"{prod.Name}: ${prod.Price}");
             }
-            /* var departments = GetAllDepartments();
 
              foreach (var dept in departments)
              {
@@ -86,7 +76,7 @@ namespace BestBuyCRUD
                  // This method give our above parameter "@departmentName" a value
                  cmd.Parameters.AddWithValue("departmentName", departmentName);
                  cmd.ExecuteNonQuery();
-             }*/
+             }
         }
     }
 }
